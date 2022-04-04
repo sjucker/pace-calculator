@@ -1,18 +1,22 @@
 <script lang="ts">
-  import { unit } from "../stores";
-  import { Unit } from "$lib/enums";
+	import { getFactor } from '$lib/enums';
+	import { unit } from '../stores';
 
-  export let distanceInMeters = 0;
-  let distanceInCurrentUnit;
+	export let distanceInMeters = 0;
+	let distanceInCurrentUnit: number;
 
-  unit.subscribe(value => {
-    distanceInCurrentUnit = value === Unit.KILOMETER ?
-      distanceInMeters / 1000 :
-      distanceInMeters / 1609;
-  });
+	unit.subscribe((value) => {
+		distanceInCurrentUnit = distanceInMeters / getFactor(value);
+	});
 
-  $: distanceInMeters = distanceInCurrentUnit * ($unit === Unit.KILOMETER ? 1000 : 1609);
-
+	$: distanceInMeters = distanceInCurrentUnit * getFactor($unit);
 </script>
 
-Distance: <input type="number" bind:value={distanceInCurrentUnit} />{$unit}
+<input type="number" bind:value={distanceInCurrentUnit} />
+{$unit}
+
+<style>
+	input[type='number'] {
+		width: 100px;
+	}
+</style>

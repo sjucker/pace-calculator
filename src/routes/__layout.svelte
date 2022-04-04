@@ -1,9 +1,14 @@
 <script lang="ts">
-  import { unit } from "../stores";
 </script>
 
-<h1>Pace Calculator ({$unit})</h1>
+<h1>Pace Calculator</h1>
 
 <main>
-  <slot />
+	<slot />
 </main>
+
+<style>
+	:global(body) {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+</style>

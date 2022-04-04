@@ -3,7 +3,6 @@ export enum Unit {
 	MILE = 'Mile'
 }
 
-export enum Mode {
-	PACE,
-	TIME
+export function getFactor(unit: Unit): number {
+	return unit === Unit.KILOMETER ? 1000 : 1609
 }
