@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Pace Calculator</title>
+	<title>Pace Calculator v1</title>
 </svelte:head>
 
 <div id="unit-selection">
