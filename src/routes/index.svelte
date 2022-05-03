@@ -39,9 +39,11 @@
 		<td class="time"><TimeOutput {timeInSeconds} /></td>
 	</tr>
 </table>
+<hr />
+<p><a href="/info/staff-meeting">Info</a></p>
 
 <style>
-  #unit-selection {
-    margin-bottom: 30px;
-  }
+	#unit-selection {
+		margin-bottom: 30px;
+	}
 </style>
